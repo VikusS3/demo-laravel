@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           server-dir: /tienda2.totalh.net/htdocs/
           exclude: |
-            **/.git*
+            **/.git/**
             **/.github/**
             **/server/**
             **/tests/**
