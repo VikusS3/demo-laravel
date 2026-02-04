@@ -20,6 +20,14 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .tama-10 {
+            font-size: 8px !important;
+        }
+
+        .tama-9 {
+            font-size: 10px !important;
+        }
+
         .ethereal-bg {
             background: radial-gradient(circle at 0% 0%, rgba(64, 48, 232, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 100% 100%, rgba(64, 48, 232, 0.1) 0%, transparent 50%),
@@ -45,7 +53,7 @@
 </head>
 
 <body
-    class="bg-background-light font-display text-slate-900 min-h-screen overflow-x-hidden">
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen overflow-x-hidden">
     <div class="flex ethereal-bg min-h-screen relative">
 
         <!-- Mobile Backdrop Overlay -->
@@ -58,7 +66,7 @@
             <div class="p-6 lg:p-8 flex items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                     <div
-                        class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20 shrink-0">
+                        class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20 flex-shrink-0">
                         <span class="material-symbols-outlined text-white">rocket_launch</span>
                     </div>
                     <div>
@@ -169,14 +177,14 @@
                         <div class="flex flex-wrap justify-between items-end gap-4">
                             <div class="flex flex-col gap-1">
                                 <h1
-                                    class="text-slate-900 text-3xl lg:text-4xl font-black leading-tight tracking-tight">
+                                    class="text-slate-900 dark:text-white text-3xl lg:text-4xl font-black leading-tight tracking-tight">
                                     Business Branding</h1>
-                                <p class="text-slate-500 text-base">Customize how your customers see
+                                <p class="text-slate-500 dark:text-slate-400 text-base">Customize how your customers see
                                     your tracking pages.</p>
                             </div>
                             <div class="flex gap-3">
                                 <button
-                                    class="px-6 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm hover:bg-slate-50">Discard</button>
+                                    class="px-6 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-bold text-sm hover:bg-slate-50 dark:hover:bg-slate-800">Discard</button>
                                 <button
                                     class="px-6 py-2.5 rounded-xl bg-primary text-white font-bold text-sm shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity">Save
                                     Changes</button>
@@ -185,37 +193,37 @@
 
                         <!-- Branding Identity Card -->
                         <div
-                            class="bg-white rounded-2xl border border-slate-200 p-6 space-y-6">
+                            class="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-6">
                             <div class="flex items-center gap-3">
                                 <span class="material-symbols-outlined text-primary">palette</span>
-                                <h2 class="text-slate-900 text-xl font-bold">Brand Identity</h2>
+                                <h2 class="text-slate-900 dark:text-white text-xl font-bold">Brand Identity</h2>
                             </div>
 
                             <!-- Logo Upload -->
                             <div class="space-y-4">
-                                <label class="text-sm font-semibold text-slate-700">Company
+                                <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Company
                                     Logo</label>
                                 <!-- Functional Logo Upload Area -->
                                 <div id="logo-drop-area" onclick="document.getElementById('file-upload').click()"
-                                    class="flex flex-col sm:flex-row items-center gap-6 p-6 border-2 border-dashed border-slate-200 rounded-xl bg-slate-50 hover:border-primary transition-colors cursor-pointer group">
+                                    class="flex flex-col sm:flex-row items-center gap-6 p-6 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:border-primary transition-colors cursor-pointer group">
                                     <input type="file" id="file-upload" class="hidden" accept="image/*"
                                         onchange="previewLogo(event)">
 
                                     <div
-                                        class="w-24 h-24 bg-white rounded-lg flex items-center justify-center border border-slate-100 shadow-sm overflow-hidden relative">
+                                        class="w-24 h-24 bg-white dark:bg-slate-700 rounded-lg flex items-center justify-center border border-slate-100 dark:border-slate-600 shadow-sm overflow-hidden relative">
                                         <img id="logo-preview-img" alt="Logo Placeholder"
                                             class="w-16 opacity-50 transition-opacity"
                                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNAiP5wvJTNvxiHBvdknwBowZwdPuV4CoHPp6HNKomPRE0XsF1MhGuEJK-NMCrzwiVGtpfiV3bCzGlppgu3Rnz4MEW4TX_ZPOoHIDhAmjn-yE2b4ONNS0Ii8n6z5mbGq9KP89ZYiBA7X4pYm6hDdVMHY6NY4xYTaPPgD7vVSSSCofDej1bd54rIO5gwDAcLU1MI8WyzyhFUhhL3JcdMMnztO-tcVpsJwttFvl48dqeI_AxMAdPrdPjurv0mqPLTKJrn7fp-Pp5-cY" />
                                     </div>
                                     <div class="flex-1 text-center sm:text-left">
                                         <p
-                                            class="text-slate-900 font-bold group-hover:text-primary transition-colors">
+                                            class="text-slate-900 dark:text-white font-bold group-hover:text-primary transition-colors">
                                             Upload new logo</p>
-                                        <p class="text-slate-500 text-xs mt-1">PNG, SVG or JPG
+                                        <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">PNG, SVG or JPG
                                             (max.
                                             2MB). Recommended size 512x512px.</p>
                                         <button type="button"
-                                            class="mt-4 px-4 py-2 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-50 pointer-events-none">Choose
+                                            class="mt-4 px-4 py-2 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg text-xs font-bold text-slate-700 dark:text-white hover:bg-slate-50 pointer-events-none">Choose
                                             File</button>
                                     </div>
                                 </div>
@@ -225,13 +233,13 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
                                 <div class="space-y-4">
                                     <label
-                                        class="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
                                         Primary Brand Color
                                         <span class="material-symbols-outlined text-[16px] text-slate-400">info</span>
                                     </label>
                                     <div class="flex items-center gap-3">
                                         <div
-                                            class="relative size-12 rounded-xl border-4 border-white shadow-sm overflow-hidden">
+                                            class="relative size-12 rounded-xl border-4 border-white dark:border-slate-800 shadow-sm overflow-hidden">
                                             <div id="color-preview" class="w-full h-full bg-primary"></div>
                                             <!-- Native Color Input Hidden but Functional -->
                                             <input type="color" id="native-color-picker"
@@ -239,12 +247,12 @@
                                                 value="#4030E8" oninput="updateColor(this.value)">
                                         </div>
                                         <input id="hex-input"
-                                            class="flex-1 bg-white border-slate-200 rounded-xl px-4 py-2.5 text-sm font-mono focus:ring-primary focus:border-primary uppercase"
+                                            class="flex-1 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm font-mono focus:ring-primary focus:border-primary uppercase"
                                             type="text" value="#4030E8" onchange="updateColor(this.value)" />
                                     </div>
                                 </div>
                                 <div class="space-y-4">
-                                    <label class="text-sm font-semibold text-slate-700">Preset
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Preset
                                         Palettes</label>
                                     <div class="flex gap-3">
                                         <button onclick="updateColor('#2563EB')"
@@ -256,7 +264,7 @@
                                         <button onclick="updateColor('#F59E0B')"
                                             class="size-8 rounded-full bg-amber-500 border-2 border-transparent hover:scale-110 transition-transform"></button>
                                         <button onclick="updateColor('#4030E8')"
-                                            class="size-8 rounded-full bg-[#4030E8] border-2 border-white ring-2 ring-[#4030E8] ring-offset-2 hover:scale-110 transition-transform"></button>
+                                            class="size-8 rounded-full bg-[#4030E8] border-2 border-white ring-2 ring-[#4030E8] ring-offset-2 dark:ring-offset-slate-900 hover:scale-110 transition-transform"></button>
                                     </div>
                                 </div>
                             </div>
@@ -264,33 +272,33 @@
 
                         <!-- Company Profile Section -->
                         <div
-                            class="bg-white rounded-2xl border border-slate-200 p-6 space-y-6">
+                            class="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-6">
                             <div class="flex items-center gap-3">
                                 <span class="material-symbols-outlined text-primary">business</span>
-                                <h2 class="text-slate-900 text-xl font-bold">Company Profile</h2>
+                                <h2 class="text-slate-900 dark:text-white text-xl font-bold">Company Profile</h2>
                             </div>
                             <div class="grid grid-cols-1 gap-6">
                                 <div class="space-y-2">
-                                    <label class="text-sm font-semibold text-slate-700">Company
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Company
                                         Name</label>
                                     <!-- Added ID and oninput handler -->
                                     <input type="text" id="company-name-input"
                                         oninput="updateCompanyName(this.value)"
-                                        class="w-full bg-white border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
+                                        class="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
                                         placeholder="e.g. Logistics Pro">
                                 </div>
                                 <div class="space-y-2">
-                                    <label class="text-sm font-semibold text-slate-700">Slogan /
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Slogan /
                                         Tagline</label>
                                     <input type="text"
-                                        class="w-full bg-white border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
+                                        class="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
                                         placeholder="e.g. Fast & Reliable Delivery">
                                 </div>
                                 <div class="space-y-2">
                                     <label
-                                        class="text-sm font-semibold text-slate-700">Description</label>
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">Description</label>
                                     <textarea
-                                        class="w-full bg-white border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
+                                        class="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
                                         rows="3" placeholder="Brief description of your business..."></textarea>
                                 </div>
                             </div>
@@ -298,53 +306,53 @@
 
                         <!-- Social & Contact Section -->
                         <div
-                            class="bg-white rounded-2xl border border-slate-200 p-6 space-y-6">
+                            class="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-6">
                             <div class="flex items-center gap-3">
                                 <span class="material-symbols-outlined text-primary">share</span>
-                                <h2 class="text-slate-900 text-xl font-bold">Social Media & Links</h2>
+                                <h2 class="text-slate-900 dark:text-white text-xl font-bold">Social Media & Links</h2>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
                                     <label
-                                        class="text-sm font-semibold text-slate-700">Website</label>
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">Website</label>
                                     <div class="relative">
                                         <span
                                             class="absolute left-4 top-2.5 text-slate-400 material-symbols-outlined text-[18px]">language</span>
                                         <input type="url"
-                                            class="w-full bg-white border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
+                                            class="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
                                             placeholder="https://example.com">
                                     </div>
                                 </div>
                                 <div class="space-y-2">
                                     <label
-                                        class="text-sm font-semibold text-slate-700">WhatsApp</label>
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">WhatsApp</label>
                                     <div class="relative">
                                         <span
                                             class="absolute left-4 top-2.5 text-slate-400 material-symbols-outlined text-[18px]">chat</span>
                                         <input type="tel"
-                                            class="w-full bg-white border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
+                                            class="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
                                             placeholder="+1 (555) 000-0000">
                                     </div>
                                 </div>
                                 <div class="space-y-2">
                                     <label
-                                        class="text-sm font-semibold text-slate-700">Facebook</label>
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">Facebook</label>
                                     <div class="relative">
                                         <span
                                             class="absolute left-4 top-2.5 text-slate-400 material-symbols-outlined text-[18px]">thumb_up</span>
                                         <input type="url"
-                                            class="w-full bg-white border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
+                                            class="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
                                             placeholder="facebook.com/page">
                                     </div>
                                 </div>
                                 <div class="space-y-2">
                                     <label
-                                        class="text-sm font-semibold text-slate-700">Instagram</label>
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">Instagram</label>
                                     <div class="relative">
                                         <span
                                             class="absolute left-4 top-2.5 text-slate-400 material-symbols-outlined text-[18px]">photo_camera</span>
                                         <input type="text"
-                                            class="w-full bg-white border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
+                                            class="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:ring-primary focus:border-primary transition-all"
                                             placeholder="@username">
                                     </div>
                                 </div>
@@ -369,7 +377,7 @@
 
                             <!-- Phone Mockup Container -->
                             <div
-                                class="relative mx-auto w-full max-w-[320px] aspect-[9/18.5] bg-slate-900 rounded-[3rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden ring-4 ring-slate-800/20">
+                                class="relative mx-auto w-full max-w-[320px] aspect-[9/18.5] bg-slate-900 rounded-[3rem] border-8 border-slate-800 shadow-2xl overflow-hidden ring-4 ring-slate-800/20">
                                 <!-- Screen Header -->
                                 <div class="absolute top-0 w-full h-6 flex justify-center z-20">
                                     <div class="w-24 h-5 bg-slate-900 rounded-b-xl"></div>
@@ -445,9 +453,9 @@
                                                     <div
                                                         class="size-3 rounded-full bg-primary flex items-center justify-center cambiar-color">
                                                         <span
-                                                            class="material-symbols-outlined text-[8px] text-white">check</span>
+                                                            class="material-symbols-outlined tama-10 text-white">check</span>
                                                     </div>
-                                                    <div class="w-[1px] bg-primary h-8 opacity-50 cambiar-color"></div>
+                                                    <div class="w-px bg-primary h-8 opacity-50 cambiar-color"></div>
                                                 </div>
                                                 <div class="pb-4">
                                                     <h5 class="text-xs font-bold">Ordered</h5>
@@ -459,7 +467,7 @@
                                                     <div
                                                         class="size-3 rounded-full bg-primary flex items-center justify-center cambiar-color">
                                                         <span
-                                                            class="material-symbols-outlined text-[8px] text-white">check</span>
+                                                            class="material-symbols-outlined tama-10 text-white">check</span>
                                                     </div>
                                                     <div class="w-[1px] bg-primary h-8 cambiar-color"></div>
                                                 </div>
@@ -473,7 +481,7 @@
                                                     <div id="mock-call-btn"
                                                         class="size-5 rounded-full bg-primary cambiar-color flex items-center justify-center relative z-10">
                                                         <span
-                                                            class="material-symbols-outlined text-[10px] text-white">local_shipping</span>
+                                                            class="material-symbols-outlined tama-9 text-white">local_shipping</span>
                                                     </div>
                                                     <!-- Use ID for color update on this line -->
                                                     <div id="mock-progress-bar"
@@ -539,7 +547,7 @@
     </div>
 
     <button
-        class="fixed bottom-8 right-8 w-14 h-14 bg-white backdrop-blur-lg border border-white/20 rounded-full shadow-xl flex items-center justify-center text-primary hover:scale-110 transition-transform z-50">
+        class="fixed bottom-8 right-8 w-14 h-14 bg-white dark:bg-white/10 backdrop-blur-lg border border-white/20 rounded-full shadow-xl flex items-center justify-center text-primary hover:scale-110 transition-transform z-50">
         <span class="material-symbols-outlined">help_center</span>
     </button>
 
