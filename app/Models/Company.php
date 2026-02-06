@@ -26,4 +26,22 @@ class Company extends Model
         'plan',
         'active',
     ];
+
+    protected static function booted()
+    {
+        static::created(function ($company) {
+            // Crear estados por defecto automáticamente
+            $defaultStatuses = [
+                ['name' => 'Pendiente', 'color' => '#fbbf24'], // Amarillo
+                ['name' => 'Procesando', 'color' => '#3b82f6'], // Azul
+                ['name' => 'En Ruta', 'color' => '#8b5cf6'], // Violeta
+                ['name' => 'Entregado', 'color' => '#10b981'], // Verde
+                ['name' => 'Cancelado', 'color' => '#ef4444'], // Rojo
+            ];
+
+            foreach ($defaultStatuses as $status) {
+                $company->customStatuses()->create($status);
+            }
+        });
+    }
 }
