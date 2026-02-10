@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\OrderStatus;
 
 class Company extends Model
 {
+    use HasFactory;
 
     protected $table = 'companies';
 
@@ -43,5 +46,11 @@ class Company extends Model
                 $company->customStatuses()->create($status);
             }
         });
+    }
+
+    // Relación: los estados personalizados que pertenecen a la empresa
+    public function customStatuses()
+    {
+        return $this->hasMany(OrderStatus::class, 'company_id');
     }
 }

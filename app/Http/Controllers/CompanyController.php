@@ -12,18 +12,19 @@ class CompanyController extends Controller
      */
     public function index(Request $request) // Asegúrate de inyectar Request
     {
-        $companies = Company::query()
-            // Si hay una búsqueda en la URL (?search=algo)...
-            ->when($request->input('search'), function ($query, $search) {
-                $query->where('name', 'like', "%{$search}%")
-                    // Opcional: Si quieres que también busque por RUC al mismo tiempo:
-                    ->orWhere('ruc', 'like', "%{$search}%");
-            })
-            ->orderBy('id', 'desc')
-            ->paginate(10)
-            ->withQueryString(); // <--- IMPORTANTE: Mantiene el filtro al cambiar de página
+        // $companies = Company::query()
+        //     // Si hay una búsqueda en la URL (?search=algo)...
+        //     ->when($request->input('search'), function ($query, $search) {
+        //         $query->where('name', 'like', "%{$search}%")
+        //             // Opcional: Si quieres que también busque por RUC al mismo tiempo:
+        //             ->orWhere('ruc', 'like', "%{$search}%");
+        //     })
+        //     ->orderBy('id', 'desc')
+        //     ->paginate(10)
+        //     ->withQueryString(); // <--- IMPORTANTE: Mantiene el filtro al cambiar de página
 
-        return view('companies.index', compact('companies'));
+        // return view('companies.index', compact('companies'));
+        return view('companies.index');
     }
 
     /**

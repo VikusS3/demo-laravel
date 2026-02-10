@@ -8,6 +8,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderStatusController;
+
+
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', function () {
@@ -24,6 +26,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/ajustes', [AjustesController::class, 'index'])->name('ajustes');
     Route::get('/crear', [PedidoController::class, 'create'])->name('pedidos.create');
+
+    Route::prefix('api')->group(function () {
+        Route::apiResource('companies', CompanyController::class);
+    });
+
+
 
     Route::apiResource('companies', CompanyController::class);
     Route::apiResource('order-statuses', OrderStatusController::class);
