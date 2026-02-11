@@ -32,3 +32,4 @@ jobs:
             **/node_modules/**
             **/vendor/**
             **/*.log
+            **/public/uploads/**
