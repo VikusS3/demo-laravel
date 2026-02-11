@@ -139,34 +139,8 @@
                 </div>
             </header>
 
-            <div class="p-4 lg:p-8 max-w-[1400px] mx-auto w-full">
-                <div class="flex items-center gap-2 mb-6 text-sm">
-                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">Configuración</a>
-                    <span class="material-symbols-outlined text-xs text-slate-400">chevron_right</span>
-                    <span class="text-slate-900 dark:text-white font-medium">Gestión de Empresas</span>
-                </div>
-
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-                    <div>
-                        <h1 class="text-3xl lg:text-4xl font-black text-white tracking-tight mb-2">Directorio de
-                            Empresas</h1>
-                        <p class="text-slate-400 text-sm lg:text-base max-w-2xl">Administra las empresas clientes y sus
-                            datos de facturación.</p>
-                    </div>
-                    <button onclick="openModal('new-company-modal')"
-                        class="glow-button bg-primary text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shrink-0">
-                        <span class="material-symbols-outlined">add_business</span>
-                        Nueva Empresa
-                    </button>
-                </div>
-
-
+            <div class="flex-1 w-full">
                 @yield('content')
-
-
-                {{-- <div class="p-4 border-t border-glass-border bg-white/5">
-                        {{ $companies->links('pagination::tailwind') }}
-                    </div> --}}
             </div>
     </div>
 
