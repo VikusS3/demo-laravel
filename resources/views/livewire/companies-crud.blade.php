@@ -64,7 +64,7 @@
                                 <div
                                     class="w-12 h-12 rounded-lg overflow-hidden bg-white/5 border border-glass-border flex items-center justify-center">
                                     @if ($company->logo_path)
-                                        <img src="{{ asset('uploads/' . $company->logo_path) }}"
+                                        <img src="{{ asset('uploads/logos/' . $company->logo_path) }}"
                                             alt="{{ $company->name }}" class="w-full h-full object-cover">
                                     @else
                                         <span class="material-symbols-outlined text-slate-400">business</span>
