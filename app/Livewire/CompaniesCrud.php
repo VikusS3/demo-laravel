@@ -126,12 +126,22 @@ class CompaniesCrud extends Component
 
             // Manejar el logo si se subió uno nuevo
             if ($this->logo) {
+
                 // Eliminar logo anterior si existe
                 if ($this->isEditMode && $this->logo_path) {
-                    Storage::disk('public')->delete($this->logo_path);
+                    $old = public_path('uploads/' . $this->logo_path);
+                    if (file_exists($old)) {
+                        unlink($old);
+                    }
                 }
 
-                $data['logo_path'] = $this->logo->store('logos', 'public');
+                $filename = uniqid() . '.' . $this->logo->getClientOriginalExtension();
+
+                // Guardar en public/uploads/logos
+                $this->logo->storeAs('uploads/logos', $filename, 'public');
+
+                // Guardamos solo el nombre
+                $data['logo_path'] = 'logos/' . $filename;
             }
 
             if ($this->isEditMode) {
