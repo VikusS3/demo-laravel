@@ -191,8 +191,8 @@
                                                 <img src="{{ asset('uploads/' . $company->logo_path) }}" alt="Preview"
                                                     class="w-full h-full object-cover">
                                             @elseif($logo_path)
-                                                <img src="{{ asset('uploads/' . $company->logo_path) }}"
-                                                    alt="Logo actual" class="w-full h-full object-cover">
+                                                <img src="{{ asset('uploads/' . $logo_path) }}" alt="Logo actual"
+                                                    class="w-full h-full object-cover">
                                             @else
                                                 <span class="material-symbols-outlined text-slate-400">business</span>
                                             @endif
