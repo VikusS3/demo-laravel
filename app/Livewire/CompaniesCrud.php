@@ -138,7 +138,7 @@ class CompaniesCrud extends Component
                 $filename = uniqid() . '.' . $this->logo->getClientOriginalExtension();
 
                 // Guardar en public/uploads/logos
-                $this->logo->storeAs('uploads/logos', $filename, 'public');
+                $this->logo->storeAs('logos', $filename, 'public');
 
                 // Guardamos solo el nombre
                 $data['logo_path'] = 'logos/' . $filename;
