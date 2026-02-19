@@ -83,7 +83,7 @@ $(document).ready(function () {
                 const logoSrc = company.logo_path ? `${company.logo_path}` : "";
                 const logoHtml = logoSrc
                     ? `<img src="${logoSrc}" alt="${company.name}" class="w-full h-full object-cover">`
-                    : `<span class="material-symbols-outlined text-slate-400">business</span>`;
+                    : `<span class="material-symbols-outlined text-slate-300">business</span>`;
 
                 let planClass = "";
                 if (company.plan === "enterprise")
