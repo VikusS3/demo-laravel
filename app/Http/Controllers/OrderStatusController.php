@@ -12,15 +12,9 @@ class OrderStatusController extends Controller
      * IMPORTANTE: Normalmente querrás filtrar por company_id
      * Ejemplo GET: /api/order-statuses?company_id=1
      */
-    public function index(Request $request)
+    public function index()
     {
-        $query = OrderStatus::query();
-
-        if ($request->has('company_id')) {
-            $query->where('company_id', $request->company_id);
-        }
-
-        return response()->json($query->get());
+        return view('status.index');
     }
 
     /**

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('order_statuses', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Ej: Nuevo, Procesando, Enviado
-            $table->string('color')->default('#808080'); // Para pintar el badge en el front
-            $table->foreignId('company_id')->constrained()->onDelete('cascade'); // Cada empresa tiene sus estados
+            $table->string('name');
+            $table->string('color')->default('#808080');
+            $table->foreignId('company_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

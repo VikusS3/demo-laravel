@@ -33,13 +33,12 @@ class Company extends Model
     protected static function booted()
     {
         static::created(function ($company) {
-            // Crear estados por defecto automáticamente
             $defaultStatuses = [
-                ['name' => 'Pendiente', 'color' => '#fbbf24'], // Amarillo
-                ['name' => 'Procesando', 'color' => '#3b82f6'], // Azul
-                ['name' => 'En Ruta', 'color' => '#8b5cf6'], // Violeta
-                ['name' => 'Entregado', 'color' => '#10b981'], // Verde
-                ['name' => 'Cancelado', 'color' => '#ef4444'], // Rojo
+                ['name' => 'Pendiente', 'color' => '#fbbf24'],
+                ['name' => 'Procesando', 'color' => '#3b82f6'],
+                ['name' => 'En Ruta', 'color' => '#8b5cf6'],
+                ['name' => 'Entregado', 'color' => '#10b981'],
+                ['name' => 'Cancelado', 'color' => '#ef4444'],
             ];
 
             foreach ($defaultStatuses as $status) {

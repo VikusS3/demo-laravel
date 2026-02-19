@@ -30,11 +30,12 @@ Route::middleware('auth')->group(function () {
     Route::prefix('api')->group(function () {
         Route::apiResource('companies', CompanyController::class);
     });
+    Route::get('/companies/data', [CompanyController::class, 'getData'])->name('companies.data');
+    Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
 
 
-
-    Route::apiResource('companies', CompanyController::class);
-    Route::apiResource('order-statuses', OrderStatusController::class);
+    // Route::apiResource('order-statuses', OrderStatusController::class);
+    Route::get('/status', [OrderStatusController::class, 'index'])->name('status.index');
     Route::apiResource('orders', OrderController::class);
 });
 
