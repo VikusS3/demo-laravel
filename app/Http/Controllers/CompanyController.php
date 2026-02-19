@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class CompanyController extends Controller
 {
@@ -59,7 +60,14 @@ class CompanyController extends Controller
 
             // Manejo del Logo
             if ($request->hasFile('logo')) {
-                $validated['logo_path'] = $request->file('logo')->store('logos', 'public');
+                $file = $request->file('logo');
+
+                $filename = time() . '_' . $file->getClientOriginalName();
+
+                // guardar directamente en public/uploads/logos
+                $file->move(public_path('uploads/logos'), $filename);
+
+                $validated['logo_path'] = 'uploads/logos/' . $filename;
             }
             // Valor por defecto color
             if (empty($validated['color_primary'])) {
@@ -128,11 +136,26 @@ class CompanyController extends Controller
             ]);
 
             // Manejo del Logo (borrar anterior si hay nuevo)
+            // 🔥 Manejo del Logo
             if ($request->hasFile('logo')) {
+
+                // borrar logo anterior si existe
                 if ($company->logo_path) {
-                    Storage::disk('public')->delete($company->logo_path);
+                    $oldPath = public_path($company->logo_path);
+                    if (file_exists($oldPath)) {
+                        unlink($oldPath);
+                    }
                 }
-                $validated['logo_path'] = $request->file('logo')->store('logos', 'public');
+
+                $file = $request->file('logo');
+
+                // nombre único profesional
+                $filename = Str::uuid() . '.' . $file->getClientOriginalExtension();
+
+                // mover a public/uploads/logos
+                $file->move(public_path('uploads/logos'), $filename);
+
+                $validated['logo_path'] = 'uploads/logos/' . $filename;
             }
 
             $company->update($validated);

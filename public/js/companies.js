@@ -80,9 +80,7 @@ $(document).ready(function () {
             `;
         } else {
             companies.forEach((company) => {
-                const logoSrc = company.logo_path
-                    ? `/storage/${company.logo_path}`
-                    : "";
+                const logoSrc = company.logo_path ? `${company.logo_path}` : "";
                 const logoHtml = logoSrc
                     ? `<img src="${logoSrc}" alt="${company.name}" class="w-full h-full object-cover">`
                     : `<span class="material-symbols-outlined text-slate-400">business</span>`;
@@ -351,7 +349,7 @@ $(document).ready(function () {
 
                 if (company.logo_path) {
                     $("#logo-img")
-                        .attr("src", `/storage/${company.logo_path}`)
+                        .attr("src", `/${company.logo_path}`)
                         .removeClass("hidden");
                     $("#logo-placeholder").addClass("hidden");
                 }
